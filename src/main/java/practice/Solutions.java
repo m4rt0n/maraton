@@ -1,6 +1,5 @@
 package practice;
 
-import java.time.Duration;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,20 +32,9 @@ public class Solutions {
 
 	// 6 get female winner (sum of times)
 	public Person getFemaleWinner() {
-		Duration max = getMax(personList);
-		return (Person) personList.stream()
-				.filter(p -> p.getPersonalData().getSex() == "f" && p.getMaratonInfo().getTotal() == max);
-	}
 
-//find max duration
-	public Duration getMax(List<Person> pList) {
-		Duration max = null;
-		for (Person p : pList) {
-			if (p.getMaratonInfo().getTotal().compareTo(max) > 0) {
-				max = p.getMaratonInfo().getTotal();
-			}
-		}
-		return max;
+		return personList.stream().filter(p -> p.getPersonalData().getSex() == "f")
+				.max((p, pp) -> p.getMaratonInfo().getTotal().compareTo(pp.getMaratonInfo().getTotal())).get();
 	}
 
 }

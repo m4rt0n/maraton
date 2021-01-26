@@ -2,7 +2,7 @@ package practice;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.time.LocalTime;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -42,11 +42,11 @@ public class MainApp {
 		pd.setNumber(Integer.parseInt(array[2]));
 		pd.setSex(array[3]);
 		pd.setAge(array[4]);
-		mi.setSwim(LocalTime.parse(array[5]));
-		mi.setBreakOne(LocalTime.parse(array[6]));
-		mi.setCycle(LocalTime.parse(array[7]));
-		mi.setBreakTwo(LocalTime.parse(array[8]));
-		mi.setRun(LocalTime.parse(array[9]));
+		mi.setSwim(Duration.parse(array[5]));
+		mi.setBreakOne(Duration.parse(array[6]));
+		mi.setCycle(Duration.parse(array[7]));
+		mi.setBreakTwo(Duration.parse(array[8]));
+		mi.setRun(Duration.parse(array[9]));
 
 		return new Person(pd, mi);
 	}

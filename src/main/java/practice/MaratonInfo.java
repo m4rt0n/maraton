@@ -10,7 +10,6 @@ public class MaratonInfo {
 	private Duration cycle;
 	private Duration breakTwo;
 	private Duration run;
-	private Duration total;
 
 	public Duration getSwim() {
 		return swim;
@@ -53,6 +52,7 @@ public class MaratonInfo {
 	}
 
 	public Duration getTotal() {
+		Duration total = null;
 		List<Duration> dList = new ArrayList<>();
 		dList.add(getSwim());
 		dList.add(getBreakOne());
