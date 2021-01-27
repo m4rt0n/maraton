@@ -52,7 +52,7 @@ public class MaratonInfo {
 	}
 
 	public Duration getTotal() {
-		Duration total = null;
+		Duration total = Duration.ZERO;
 		List<Duration> dList = new ArrayList<>();
 		dList.add(getSwim());
 		dList.add(getBreakOne());

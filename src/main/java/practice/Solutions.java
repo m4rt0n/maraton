@@ -1,9 +1,10 @@
 package practice;
 
+import java.util.Calendar;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Solutions {
+public class Solutions implements ISolutions {
 	private List<Person> personList;
 
 	public Solutions(List<Person> personList) {
@@ -16,13 +17,13 @@ public class Solutions {
 	}
 
 	// 3 number of 'elit junior'
-	public int getNumberOfElitJunior() {
-		return (int) personList.stream().filter(p -> p.getPersonalData().getAge() == "elit junior").count();
+	public int getNumberOfMembersByCategory(String category) {
+		return (int) personList.stream().filter(p -> p.getPersonalData().getAge() == category).count();
 	}
 
 	// 4 average age
 	public float getAverageAge() {
-		return (float) personList.stream().mapToInt(p -> 2021 - (p.getPersonalData().getBirth())).sum();
+		return (float) personList.stream().mapToInt(p -> ((Calendar.YEAR) - (p.getPersonalData().getBirth()))).sum();
 	}
 
 	// 5 get start number of people by age
@@ -31,9 +32,8 @@ public class Solutions {
 	}
 
 	// 6 get female winner (sum of times)
-	public Person getFemaleWinner() {
-
-		return personList.stream().filter(p -> p.getPersonalData().getSex() == "f")
+	public Person getWinnerBySex(char sex) {
+		return personList.stream().filter(p -> p.getPersonalData().getSex() == sex)
 				.max((p, pp) -> p.getMaratonInfo().getTotal().compareTo(pp.getMaratonInfo().getTotal())).get();
 	}
 

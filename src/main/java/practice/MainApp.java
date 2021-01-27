@@ -40,7 +40,7 @@ public class MainApp {
 		pd.setName(array[0]);
 		pd.setAge(array[1]);
 		pd.setNumber(Integer.parseInt(array[2]));
-		pd.setSex(array[3]);
+		pd.setSex((array[3]).charAt(0));
 		pd.setAge(array[4]);
 		mi.setSwim(Duration.parse(array[5]));
 		mi.setBreakOne(Duration.parse(array[6]));

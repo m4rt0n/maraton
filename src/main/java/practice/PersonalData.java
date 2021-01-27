@@ -4,7 +4,7 @@ public class PersonalData {
 	private String name;
 	private int birth;
 	private int number;
-	private String sex;
+	private char sex;
 	private String age;
 
 	public String getName() {
@@ -31,11 +31,11 @@ public class PersonalData {
 		this.number = number;
 	}
 
-	public String getSex() {
+	public char getSex() {
 		return sex;
 	}
 
-	public void setSex(String sex) {
+	public void setSex(char sex) {
 		this.sex = sex;
 	}
 
