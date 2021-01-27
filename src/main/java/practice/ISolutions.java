@@ -10,7 +10,7 @@ public interface ISolutions {
 
 	public float getAverageAge();
 
-	public List<Person> getNumberByCategory(String age);
+	public List<Person> getPeopleByCategory(String category);
 
 	public Person getWinnerBySex(char sex);
 }
